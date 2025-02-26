@@ -1,19 +1,18 @@
 <script setup>
 import { usePrintStore } from '@/stores/print';
-import { onMounted } from 'vue';
-import Home from './Home.vue';
 
 const printStore = usePrintStore();
-
-onMounted(()=>{
-  printStore.loadPapers()
-})
-
 
 </script>
 
 <template>
-  <Home />
+  <button
+    @click="printStore.calculatePrices()"
+  >
+    calcular
+  </button>
 </template>
 
+<style scoped>
 
+</style>

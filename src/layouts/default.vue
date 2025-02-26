@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
   <v-main>
     <router-view />
@@ -6,6 +10,4 @@
   <AppFooter />
 </template>
 
-<script setup>
-  //
-</script>
+
