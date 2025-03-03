@@ -2,7 +2,9 @@
 import { usePrintStore } from '@/stores/print';
 
 const printStore = usePrintStore();
-
+const addSizes = () => {
+  console.log(printStore.printShortSide)
+}
 
 </script>
 
@@ -31,9 +33,7 @@ const printStore = usePrintStore();
         </v-btn>
       </template>
     </v-card>
-    <button
-      @click="printStore.calculatePrices()"
-    >
+    <button @click="addSizes()">
       calcular
     </button>
   </div>
