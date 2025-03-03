@@ -1,19 +1,15 @@
-// Utilities
 import { defineStore } from 'pinia';
 import { usePaperStore } from './papers';
 
 const paperStore = usePaperStore();
 
-//this.printLongerSide != undefined &&
-//this.printShortSide != undefined &&
 
 export const usePrintStore = defineStore('print', {
   state: () => ({
     papers: [],
-    printLongerSide : 200,
-    printShortSide : 140,
+    printLongerSide : "",
+    printShortSide : "",
 
-    frameType: "",
     LinearFramePrice: "",
     totalFramePrice: "",
 
@@ -29,13 +25,13 @@ export const usePrintStore = defineStore('print', {
       for (let i= 0; i < this.papers.length; i++){
         // verificar qual lado do impresso usar na largura da bobina e calcular todos os preços de todos papéis e bobinas
         for (let j= 0; j < this.papers[i].coilWidth.length; j++){
-          if(this.printLongerSide != undefined && this.printLongerSide + this.papers[i].margin <= this.papers[i].coilWidth[j]) {
+          if(this.printLongerSide != undefined && this.printLongerSide != 0 && this.printLongerSide != null && this.printLongerSide + this.papers[i].margin <= this.papers[i].coilWidth[j]) {
             this.papers[i].printLength[j] = this.printShortSide;
             this.papers[i].printingPrices[j] = ((this.papers[i].printLength[j] * this.papers[i].coilWidth[j])/100) * this.papers[i].printingPriceMeter[j];
             console.log(this.papers[i].printingPrices[j])
             console.log(this.papers[i].printLength[j])
           }
-          else if (this.printShortSide != undefined && this.printLongerSide + this.papers[i].margin > this.papers[i].coilWidth[j] && this.printShortSide+ this.papers[i].margin <= this.papers[i].coilWidth[j]){
+          else if (this.printShortSide != undefined && this.printLongerSide != 0 && this.printLongerSide != null && this.printLongerSide + this.papers[i].margin > this.papers[i].coilWidth[j] && this.printShortSide+ this.papers[i].margin <= this.papers[i].coilWidth[j]){
             this.papers[i].printLength[j] = this.printLongerSide;
             this.papers[i].printingPrices[j] = ((this.papers[i].printLength[j] * this.papers[i].coilWidth[j])/100) * this.papers[i].printingPriceMeter[j];
             console.log(this.papers[i].printingPrices[j])

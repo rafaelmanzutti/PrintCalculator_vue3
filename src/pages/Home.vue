@@ -1,16 +1,12 @@
 <script setup>
-import { usePrintStore } from '@/stores/print';
+import Calculate from '@/components/Calculate.vue';
 
-const printStore = usePrintStore();
+
 
 </script>
 
 <template>
-  <button
-    @click="printStore.calculatePrices()"
-  >
-    calcular
-  </button>
+  <Calculate />
 </template>
 
 <style scoped>
