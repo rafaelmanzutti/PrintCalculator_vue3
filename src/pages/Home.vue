@@ -1,5 +1,6 @@
 <script setup>
 import Calculate from '@/components/Calculate.vue';
+import Introduction from '@/components/Introduction.vue';
 
 
 
@@ -7,6 +8,8 @@ import Calculate from '@/components/Calculate.vue';
 
 <template>
   <Calculate />
+  <Introduction />
+  <LowestPrices />
 </template>
 
 <style scoped>

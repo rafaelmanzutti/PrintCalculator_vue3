@@ -2,9 +2,6 @@
 import { usePrintStore } from '@/stores/print';
 
 const printStore = usePrintStore();
-const addSizes = () => {
-  console.log(printStore.printShortSide)
-}
 
 </script>
 
@@ -16,11 +13,11 @@ const addSizes = () => {
     >
       <v-text-field
         v-model="printStore.printLongerSide"
-        label="Digite o Maior lado"
+        label="Digite o maior lado em centímetros"
       />
       <v-text-field
         v-model="printStore.printShortSide"
-        label="Digite o Menor lado"
+        label="Digite o menor lado em centímetros"
       />
       <template #actions>
         <v-spacer />
@@ -33,9 +30,6 @@ const addSizes = () => {
         </v-btn>
       </template>
     </v-card>
-    <button @click="addSizes()">
-      calcular
-    </button>
   </div>
 </template>
 

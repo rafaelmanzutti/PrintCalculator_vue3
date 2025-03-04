@@ -25,10 +25,10 @@ export const usePrintStore = defineStore('print', {
       for (let i= 0; i < this.papers.length; i++){
         // verificar qual lado do impresso usar na largura da bobina e calcular todos os preços de todos papéis e bobinas
         for (let j= 0; j < this.papers[i].coilWidth.length; j++){
-          let verifyLong = parseInt(this.printLongerSide) + parseInt(this.papers[i].margin)
-          let verifyShort = parseInt(this.printShortSide) + parseInt(this.papers[i].margin)
+          let LongerSideMargin = parseInt(this.printLongerSide) + parseInt(this.papers[i].margin)
+          let ShortSideMargin = parseInt(this.printShortSide) + parseInt(this.papers[i].margin)
           // Se o lado maior couber na largura da bobina
-          if(verifyLong <= parseInt(this.papers[i].coilWidth[j])) {
+          if(LongerSideMargin <= parseInt(this.papers[i].coilWidth[j])) {
             this.papers[i].printLength[j] = parseInt(this.printShortSide);
             this.papers[i].printingPrices[j] = ((this.papers[i].printLength[j] * this.papers[i].coilWidth[j])/100) * this.papers[i].printingPriceMeter[j];
             console.log("largura bobina" + this.papers[i].coilWidth[j])
@@ -38,7 +38,7 @@ export const usePrintStore = defineStore('print', {
             console.log("comprimento da impressão" + this.papers[i].printLength[j])
           }
           // Se não couber o lado maior mas couber o lado menor na largura da bobina
-          else if (verifyLong > this.papers[i].coilWidth[j] && verifyShort <= this.papers[i].coilWidth[j]){
+          else if (LongerSideMargin > this.papers[i].coilWidth[j] && ShortSideMargin <= this.papers[i].coilWidth[j]){
             this.papers[i].printLength[j] = parseInt(this.printLongerSide);
             this.papers[i].printingPrices[j] = ((this.papers[i].printLength[j] * this.papers[i].coilWidth[j])/100) * this.papers[i].printingPriceMeter[j];
             console.log("largura bobina" + this.papers[i].coilWidth[j])
@@ -48,7 +48,7 @@ export const usePrintStore = defineStore('print', {
             console.log("comprimento da impressão" + this.papers[i].printLength[j])
           }
           else {
-            //Se nem o lado menor do impresso couber na largura da bobina
+            //Se nem o lado menor do impresso couber na largura da bobina preciso passar um "valor muito alto" para o printingPrices. Evitar falha na lógica Math.min de lowestPrice e evitar ser escolhido nela
             this.papers[i].printingPrices[j] = 1000000000
             console.log("O menor lado é superior a largura desta bobina")
           }
