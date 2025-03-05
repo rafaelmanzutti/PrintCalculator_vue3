@@ -3,21 +3,23 @@ import { usePrintStore } from '@/stores/print';
 
 const printStore = usePrintStore();
 
+
+
 </script>
 
 <template>
   <div>
     <v-card
-      prepend-icon="mdi mdi-playlist-edit"
+      prepend-icon="mdi mdi-calculator"
       title="Simulador de preço"
     >
       <v-text-field
         v-model="printStore.printLongerSide"
-        label="Digite o maior lado em centímetros"
+        label="Digite o MAIOR lado em centímetros"
       />
       <v-text-field
         v-model="printStore.printShortSide"
-        label="Digite o menor lado em centímetros"
+        label="Digite o MENOR lado em centímetros"
       />
       <template #actions>
         <v-spacer />

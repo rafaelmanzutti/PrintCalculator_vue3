@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <Calculate />
-  <Introduction />
-  <LowestPrices />
+  <div>
+    <h1>Frame Price</h1>
+  </div>
 </template>
 
 <style scoped>
