@@ -3,11 +3,14 @@
 </script>
 
 <template>
-  <div>
-    <h1>Introduction</h1>
+  <div class="introduction">
+    <p>texto introdutório antes de calcular ou imagens</p>
   </div>
 </template>
 
 <style scoped>
+  .introduction {
+    justify-items: center;
 
+  }
 </style>

@@ -1,10 +1,13 @@
 <script setup>
+import { usePrintStore } from '@/stores/print';
+
+const printStore = usePrintStore();
 
 </script>
 
 <template>
   <div>
-    <h1>Frame Price</h1>
+    <p>O preço da moldura fica: R$ {{ printStore.framePrice }}</p>
   </div>
 </template>
 

@@ -1,14 +1,5 @@
 <script setup>
-import { usePrintStore } from '@/stores/print';
-import { onMounted } from 'vue';
 import Home from './Home.vue';
-
-const printStore = usePrintStore();
-
-onMounted(()=>{
-  printStore.loadPapers()
-})
-
 
 </script>
 

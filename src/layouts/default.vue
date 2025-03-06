@@ -1,17 +1,15 @@
 <script setup>
-import AppHeader from '@/components/AppHeader.vue';
+import View from './View.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
 </script>
 
 <template>
-  <AppHeader />
-
-  <v-main>
-    <router-view />
-  </v-main>
-
-  <AppFooter />
+  <v-app>
+    <!-- <Alert v-if="alertStore.showAlert" /> -->
+    <View />
+    <AppFooter />
+  </v-app>
 </template>
 
 

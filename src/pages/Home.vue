@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <Calculate />
-  <Introduction />
-  <LowestPrices />
+  <h1>Home</h1>
 </template>
 
 <style scoped>
