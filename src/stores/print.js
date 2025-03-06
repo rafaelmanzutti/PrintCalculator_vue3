@@ -3,7 +3,6 @@ import { usePaperStore } from './papers';
 
 const paperStore = usePaperStore();
 
-// this.printLongerSide !== undefined && this.printLongerSide != 0 && this.printLongerSide != null
 export const usePrintStore = defineStore('print', {
   state: () => ({
     papers: [],
@@ -12,18 +11,43 @@ export const usePrintStore = defineStore('print', {
 
     LinearFramePrice: "",
     totalFramePrice: "",
-
-    papersSelected: [],
-
     frame: false,
     framePrice: 90,
-    notCalculatedPrices: true
 
+    papersSelected: [],
+    notCalculatedPrices: true,
+
+    showAlert : false,
+    type:"",
+    text:""
 
   }),
   actions: {
     loadPapers(){
       this.papers = paperStore.papers;
+    },
+    notifyAlert(){
+      this.showAlert = true
+      setTimeout(()=>{
+        this.showAlert = false
+      }, 4000)
+    },
+    notifyAlertSides(){
+      this.type="warning";
+      this.text="Coloque os tamanhos da impressão nos locais correspondentes"
+      this.notifyAlert();
+    },
+    checkSides(){
+      if(this.printLongerSide >= this.printShortSide){
+        this.calculatePrices();
+      } else {
+        this.notifyAlertSides();
+      }
+    },
+    resetSizes(){
+      this.printLongerSide = ""
+      this.printShortSide = ""
+      this.notCalculatedPrices = true
     },
     calculatePrices(){
       this.notCalculatedPrices = false;

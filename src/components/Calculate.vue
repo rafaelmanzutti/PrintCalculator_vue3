@@ -3,17 +3,17 @@ import { usePrintStore } from '@/stores/print';
 
 const printStore = usePrintStore();
 
+  // prepend-icon="mdi mdi-calculator"
+  // title="Simular preço de impressão"
 </script>
 
 <template>
   <div>
-    <v-card
-      prepend-icon="mdi mdi-calculator"
-      title="Simular preço de impressão"
-    >
+    <v-card>
       <v-text-field
         v-model="printStore.printLongerSide"
         label="MAIOR lado (cm)"
+        class="pt-2"
       />
       <v-text-field
         v-model="printStore.printShortSide"
@@ -38,13 +38,15 @@ const printStore = usePrintStore();
         <v-btn
           color="orange-accent-3"
           variant="elevated"
+          @click="printStore.resetSizes()"
         >
           Zerar medidas
         </v-btn>
         <v-btn
+          v-show="printStore.printLongerSide > 0 && printStore.printShortSide > 0"
           color="primary-darken-1"
           variant="elevated"
-          @click="printStore.calculatePrices()"
+          @click="printStore.checkSides()"
         >
           Calcular preço
         </v-btn>
