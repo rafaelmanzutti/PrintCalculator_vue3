@@ -32,12 +32,30 @@ const printStore = usePrintStore();
       </thead>
       <tbody>
         <tr>
-          <td class="td-body">Canson</td><td class="td-body">Fotográfico</td><td class="td-body">R$ 1000</td>
+          <td
+            class="td-body"
+          >
+            Canson
+          </td>
+          <td
+            class="td-body"
+          >
+            Fotográfico
+          </td>
+          <td
+            class="td-body"
+          >
+            R$ 1000
+          </td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <td v-if="printStore.frame" colspan="3" class="td-foot">
+          <td
+            v-if="printStore.frame"
+            colspan="3"
+            class="td-foot"
+          >
             *Preço da moldura: R$ 90
           </td>
         </tr>
