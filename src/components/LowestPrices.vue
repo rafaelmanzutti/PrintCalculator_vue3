@@ -1,14 +1,7 @@
 <script setup>
 import { usePrintStore } from '@/stores/print';
-import { computed } from 'vue';
 
 const printStore = usePrintStore();
-
-const papers = computed(()=>{
-  const printPapers = printStore.papers
-  console.log(printPapers)
-  return printPapers
-})
 
 </script>
 
@@ -23,7 +16,7 @@ const papers = computed(()=>{
       </thead>
       <tbody>
         <tr
-          v-for="paper in papers"
+          v-for="paper in printStore.papers"
           :key="paper"
         >
           <td
