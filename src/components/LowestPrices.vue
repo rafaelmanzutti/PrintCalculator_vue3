@@ -50,7 +50,7 @@ const papers = computed(()=>{
             colspan="3"
             class="td-foot"
           >
-            *Preço da moldura: R$ 90
+            *Preço da moldura: R$ {{ printStore.totalFramePrice }}
           </td>
         </tr>
       </tfoot>

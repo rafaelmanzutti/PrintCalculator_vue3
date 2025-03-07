@@ -9,10 +9,9 @@ export const usePrintStore = defineStore('print', {
     printLongerSide : "",
     printShortSide : "",
 
-    LinearFramePrice: "",
+    linearFramePrice: 10,
     totalFramePrice: "",
     frame: false,
-    framePrice: 90,
 
     papersSelected: [],
     notCalculatedPrices: true,
@@ -41,9 +40,15 @@ export const usePrintStore = defineStore('print', {
     checkSides(){
       if(parseInt(this.printLongerSide) >= parseInt(this.printShortSide)){
         this.calculatePrices();
+        this.calculateFramePrice();
       } else {
         this.notifyAlertSides();
       }
+    },
+    calculateFramePrice(){
+      const frameMeter = (parseInt(this.printLongerSide) + parseInt(this.printShortSide)) * 2
+      const framePrice = parseInt(frameMeter) * parseInt(this.linearFramePrice)
+      this.totalFramePrice = framePrice
     },
     resetSizes(){
       this.printLongerSide = ""
@@ -61,26 +66,26 @@ export const usePrintStore = defineStore('print', {
           if(LongerSideMargin <= parseInt(this.papers[i].coilWidth[j])) {
             this.papers[i].printLength[j] = parseInt(this.printShortSide);
             this.papers[i].printingPrices[j] = ((this.papers[i].printLength[j] * this.papers[i].coilWidth[j])/100) * this.papers[i].printingPriceMeter[j];
-            console.log("largura bobina" + this.papers[i].coilWidth[j])
-            console.log("lado maior" + this.printLongerSide)
-            console.log("lado menor" + this.printShortSide)
-            console.log("preço" + this.papers[i].printingPrices[j])
-            console.log("comprimento da impressão" + this.papers[i].printLength[j])
+            // console.log("largura bobina" + this.papers[i].coilWidth[j])
+            // console.log("lado maior" + this.printLongerSide)
+            // console.log("lado menor" + this.printShortSide)
+            // console.log("preço" + this.papers[i].printingPrices[j])
+            // console.log("comprimento da impressão" + this.papers[i].printLength[j])
           }
           // Se não couber o lado maior mas couber o lado menor na largura da bobina
           else if (LongerSideMargin > this.papers[i].coilWidth[j] && ShortSideMargin <= this.papers[i].coilWidth[j]){
             this.papers[i].printLength[j] = parseInt(this.printLongerSide);
             this.papers[i].printingPrices[j] = ((this.papers[i].printLength[j] * this.papers[i].coilWidth[j])/100) * this.papers[i].printingPriceMeter[j];
-            console.log("largura bobina" + this.papers[i].coilWidth[j])
-            console.log("lado maior" + this.printLongerSide)
-            console.log("lado menor" + this.printShortSide)
-            console.log("preço" + this.papers[i].printingPrices[j])
-            console.log("comprimento da impressão" + this.papers[i].printLength[j])
+            // console.log("largura bobina" + this.papers[i].coilWidth[j])
+            // console.log("lado maior" + this.printLongerSide)
+            // console.log("lado menor" + this.printShortSide)
+            // console.log("preço" + this.papers[i].printingPrices[j])
+            // console.log("comprimento da impressão" + this.papers[i].printLength[j])
           }
           else {
             //Se nem o lado menor do impresso couber na largura da bobina preciso passar um "valor muito alto" para o printingPrices. Evitar falha na lógica Math.min de lowestPrice e evitar ser escolhido nela
             this.papers[i].printingPrices[j] = 1000000000
-            console.log("O menor lado é superior a largura desta bobina")
+            // console.log("O menor lado é superior a largura desta bobina")
           }
         }
         // calcular menor preço de cada papel
@@ -91,14 +96,14 @@ export const usePrintStore = defineStore('print', {
         else {
           this.papers[i].printingLowestPrice = lowestPrice
         }
-        console.log("o menor preço é: " + this.papers[i].printingLowestPrice)
+        // console.log("o menor preço é: " + this.papers[i].printingLowestPrice)
         // pegar tamanho de bobina responsável pelo menor preço
         for(let k= 0; k < this.papers[i].printingPrices.length; k++){
           if(this.papers[i].printingLowestPrice != "-" && this.papers[i].printingLowestPrice == this.papers[i].printingPrices[k]){
           this.papers[i].coilWidthSelected = this.papers[i].coilWidth[k]
           }
         }
-        console.log("a bobina usada é: " + this.papers[i].coilWidthSelected)
+        // console.log("a bobina usada é: " + this.papers[i].coilWidthSelected)
       }
     },
 
