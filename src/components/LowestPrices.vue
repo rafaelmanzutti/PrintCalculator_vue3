@@ -55,6 +55,9 @@ const papers = computed(()=>{
         </tr>
       </tfoot>
     </table>
+    <div
+      class="bottom-table-space"
+    />
   </div>
 </template>
 
@@ -72,14 +75,15 @@ const papers = computed(()=>{
     padding: 4px 4px 4px 8px ;
     margin-left: 2px;
   }
-  tfoot{
-    margin-bottom: 20px;
-  }
   .td-foot{
     border: 1px solid white;
     padding: 4px 4px 4px 8px ;
     margin-left: 2px;
     font-size: 0.9rem;
+  }
+  .bottom-table-space{
+    height: 80px;
+    background-color: rgb(19, 19, 19);
   }
 
 </style>
