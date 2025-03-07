@@ -20,7 +20,7 @@ const printStore = usePrintStore();
           :key="paper"
         >
           <td
-            class="td-body"
+            class="td-body td-link"
             @click="printStore.selectPaper(paper.id)"
           >
             {{ paper.name }}
@@ -59,6 +59,7 @@ const printStore = usePrintStore();
   table{
     width: 80%;
     margin: auto;
+    margin-top: 20px;
   }
   th{
     border: 1px solid white;
@@ -68,6 +69,9 @@ const printStore = usePrintStore();
     border: 1px solid white;
     padding: 4px 4px 4px 8px ;
     margin-left: 2px;
+  }
+  .td-link{
+    cursor: pointer;
   }
   .td-foot{
     border: 1px solid white;
