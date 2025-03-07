@@ -21,6 +21,7 @@ const printStore = usePrintStore();
         >
           <td
             class="td-body"
+            @click="printStore.selectPaper(paper.id)"
           >
             {{ paper.name }}
           </td>

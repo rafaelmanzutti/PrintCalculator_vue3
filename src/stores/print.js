@@ -14,6 +14,7 @@ export const usePrintStore = defineStore('print', {
     frame: false,
 
     papersSelected: [],
+    paperSelected: {},
     notCalculatedPrices: true,
     notPaperSelected: true,
 
@@ -106,7 +107,12 @@ export const usePrintStore = defineStore('print', {
         // console.log("a bobina usada é: " + this.papers[i].coilWidthSelected)
       }
     },
-
+    selectPaper(id){
+      const indice = parseInt(id) - 1
+      this.paperSelected = this.papers[indice]
+      console.log(this.paperSelected)
+      this.notPaperSelected = false
+    }
   }
 })
 
