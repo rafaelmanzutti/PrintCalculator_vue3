@@ -6,8 +6,8 @@ export const usePaperStore = defineStore('paper', {
     papers:[
       {
         id: 1,
-        name:"",
-        type: "",
+        name:"A",
+        type: "Fotográfico",
         margin: 5,
         coilWidth: [61, 91, 110, 152],
         printingPriceMeter: [10, 20, 30, 40],
@@ -18,8 +18,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 2,
-        name:"",
-        type: "",
+        name:"B",
+        type: "Fotográfico",
         margin: 5,
         coilWidth: [61, 91, 110],
         printingPriceMeter: [10, 20, 30],
@@ -30,8 +30,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 3,
-        name:"",
-        type: "",
+        name:"C",
+        type: "Fotográfico",
         margin: 5,
         coilWidth: [61, 152],
         printingPriceMeter: [10, 40],
@@ -42,8 +42,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 4,
-        name:"",
-        type: "",
+        name:"D",
+        type: "Canvas",
         margin: 5,
         coilWidth: [61, 91],
         printingPriceMeter: [10, 20],
@@ -54,8 +54,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 5,
-        name:"",
-        type: "",
+        name:"E",
+        type: "Canvas",
         margin: 5,
         coilWidth: [61],
         printingPriceMeter: [10],
@@ -66,8 +66,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 6,
-        name:"",
-        type: "",
+        name:"F",
+        type: "Canvas",
         margin: 5,
         coilWidth: [91, 152],
         printingPriceMeter: [20, 40],
@@ -78,8 +78,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 7,
-        name:"",
-        type: "",
+        name:"G",
+        type: "Algodão",
         margin: 5,
         coilWidth: [152],
         printingPriceMeter: [40],
@@ -90,8 +90,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 8,
-        name:"",
-        type: "",
+        name:"H",
+        type: "Algodão",
         margin: 5,
         coilWidth: [61, 91, 110, 152],
         printingPriceMeter: [10, 20, 30, 40],
@@ -102,8 +102,8 @@ export const usePaperStore = defineStore('paper', {
       },
       {
         id: 9,
-        name:"",
-        type: "",
+        name:"I",
+        type: "Algodão",
         margin: 5,
         coilWidth: [110, 152],
         printingPriceMeter: [30, 40],

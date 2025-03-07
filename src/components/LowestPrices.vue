@@ -1,28 +1,19 @@
 <script setup>
 import { usePrintStore } from '@/stores/print';
+import { computed } from 'vue';
 
 const printStore = usePrintStore();
+
+const papers = computed(()=>{
+  const printPapers = printStore.papers
+  console.log(printPapers)
+  return printPapers
+})
+
 </script>
 
 <template>
   <div>
-    <h1>Lowest Prices</h1>
-    <!-- <div class="table">
-      <div class="header-table">
-        <div>Nome Papel</div>
-        <div>Tipo</div>
-        <div>Preço</div>
-      </div>
-      <div
-        v-for="(paper, i) in printStore.papers"
-        :key="i"
-        class="row-table"
-      >
-        <div>{{ paper[i].name }}</div>
-        <div>{{ paper[i].type }}</div>
-        <div>{{ paper[i].printingLowestPrice }}</div>
-      </div>
-    </div> -->
     <table>
       <caption>Tabela de preços na medida selecionada</caption>
       <thead>
@@ -31,28 +22,31 @@ const printStore = usePrintStore();
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr
+          v-for="paper in papers"
+          :key="paper"
+        >
           <td
             class="td-body"
           >
-            Canson
+            {{ paper.name }}
           </td>
           <td
             class="td-body"
           >
-            Fotográfico
+            {{ paper.type }}
           </td>
           <td
             class="td-body"
           >
-            R$ 1000
+            {{ paper.printingLowestPrice }}
           </td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <td
-            v-if="printStore.frame"
+            v-show="printStore.frame"
             colspan="3"
             class="td-foot"
           >
@@ -78,10 +72,14 @@ const printStore = usePrintStore();
     padding: 4px 4px 4px 8px ;
     margin-left: 2px;
   }
+  tfoot{
+    margin-bottom: 20px;
+  }
   .td-foot{
     border: 1px solid white;
     padding: 4px 4px 4px 8px ;
     margin-left: 2px;
     font-size: 0.9rem;
   }
+
 </style>
