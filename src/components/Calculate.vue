@@ -36,6 +36,7 @@ const printStore = usePrintStore();
 
         <v-spacer />
         <v-btn
+          size="small"
           color="orange-accent-3"
           variant="elevated"
           @click="printStore.resetSizes()"

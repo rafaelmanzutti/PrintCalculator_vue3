@@ -16,6 +16,7 @@ export const usePrintStore = defineStore('print', {
 
     papersSelected: [],
     notCalculatedPrices: true,
+    notPaperSelected: true,
 
     showAlert : false,
     type:"",
@@ -38,7 +39,7 @@ export const usePrintStore = defineStore('print', {
       this.notifyAlert();
     },
     checkSides(){
-      if(this.printLongerSide >= this.printShortSide){
+      if(parseInt(this.printLongerSide) >= parseInt(this.printShortSide)){
         this.calculatePrices();
       } else {
         this.notifyAlertSides();
