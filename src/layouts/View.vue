@@ -14,7 +14,7 @@ import { RouterLink } from 'vue-router';
       <v-img
         src="https://picsum.photos/1920/1080?random"
         gradient="to top right, rgba(249,168,0,.7), rgba(255,255,0,1)"
-        height="60"
+        height="70"
         cover
         class="pt-0"
       >
