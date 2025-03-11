@@ -8,12 +8,12 @@ const printStore = usePrintStore();
 <template>
   <div class="price-selected">
     <div class="title">
-      <h3>Papel Selecionado</h3>
+      <h3>Papel Selecionado no tamanho {{ printStore.printShortSide }} x {{ printStore.printLongerSide }} </h3>
     </div>
     <ul>
       <li>Nome: {{ printStore.paperSelected.name }} </li>
       <li>Tipo: {{ printStore.paperSelected.type }} </li>
-      <li>Preço da impressão: R$ {{ printStore.paperSelected.printingLowestPrice }} </li>
+      <li>Preço da impressão: {{ printStore.paperSelected.printingLowestPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }} </li>
       <li>Largura da bobina usada: {{ printStore.paperSelected.coilWidthSelected }} cm </li>
       <li
         v-show="printStore.frame"

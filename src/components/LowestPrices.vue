@@ -8,7 +8,7 @@ const printStore = usePrintStore();
 <template>
   <div>
     <table>
-      <caption>Tabela de preços na medida selecionada</caption>
+      <caption>Tabela de preços no tamanho {{ printStore.printShortSide }} x {{ printStore.printLongerSide }} </caption>
       <thead>
         <tr>
           <th>Papel</th><th>Tipo</th><th>Valor</th>
@@ -33,7 +33,7 @@ const printStore = usePrintStore();
           <td
             class="td-body"
           >
-            {{ paper.printingLowestPrice }}
+            {{ paper.printingLowestPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
           </td>
         </tr>
       </tbody>
