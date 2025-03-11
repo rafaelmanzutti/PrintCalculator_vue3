@@ -8,10 +8,10 @@ const printStore = usePrintStore();
 <template>
   <div>
     <table>
-      <caption>Tabela de preços no tamanho {{ printStore.printShortSide }} x {{ printStore.printLongerSide }} </caption>
+      <caption>Tabela de preços no tamanho {{ printStore.printShortSide }} cm x {{ printStore.printLongerSide }} cm </caption>
       <thead>
         <tr>
-          <th>Papel</th><th>Tipo</th><th>Valor</th>
+          <th>Nome</th><th>Tipo de Material</th><th>Valor</th>
         </tr>
       </thead>
       <tbody>
@@ -44,7 +44,7 @@ const printStore = usePrintStore();
             colspan="3"
             class="td-foot"
           >
-            *Preço da moldura: R$ {{ printStore.totalFramePrice }}
+            *Preço da moldura: {{ printStore.totalFramePrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
           </td>
         </tr>
       </tfoot>

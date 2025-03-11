@@ -7,7 +7,7 @@ export const usePaperStore = defineStore('paper', {
       {
         id: 1,
         name:"Canvas Canson",
-        type: "Canvas",
+        type: "Tela",
         margin: 15,
         coilWidth: [61, 111, 152],
         printingPriceMeter: [550, 550, 550],
@@ -19,9 +19,9 @@ export const usePaperStore = defineStore('paper', {
       {
         id: 2,
         name:"Canvas Nipon",
-        type: "Canvas",
+        type: "Tela",
         margin: 15,
-        coilWidth: [91, 110, 127],
+        coilWidth: [91, 111, 127],
         printingPriceMeter: [430, 430, 430],
         printLength: [],
         printingPrices: [],
@@ -31,7 +31,7 @@ export const usePaperStore = defineStore('paper', {
       {
         id: 3,
         name:"Tela Poliester",
-        type: "Canvas",
+        type: "Tela",
         margin: 15,
         coilWidth: [127],
         printingPriceMeter: [330],
@@ -45,7 +45,7 @@ export const usePaperStore = defineStore('paper', {
         name:"Hahnemuhle Rag Baryta",
         type: "Algodão",
         margin: 5,
-        coilWidth: [110],
+        coilWidth: [111],
         printingPriceMeter: [700],
         printLength: [],
         printingPrices: [],

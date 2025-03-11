@@ -9,7 +9,7 @@ export const usePrintStore = defineStore('print', {
     printLongerSide : "",
     printShortSide : "",
 
-    linearFramePrice: 10,
+    linearMeterFramePrice: 95,
     totalFramePrice: "",
     frame: false,
 
@@ -47,8 +47,8 @@ export const usePrintStore = defineStore('print', {
       }
     },
     calculateFramePrice(){
-      const frameMeter = (parseInt(this.printLongerSide) + parseInt(this.printShortSide)) * 2
-      const framePrice = parseInt(frameMeter) * parseInt(this.linearFramePrice)
+      const frameMeter = ((parseFloat(this.printLongerSide)/100) + (parseFloat(this.printShortSide)/100)) * 2
+      const framePrice = parseFloat(frameMeter) * parseFloat(this.linearMeterFramePrice)
       this.totalFramePrice = framePrice
     },
     resetSizes(){
@@ -61,17 +61,17 @@ export const usePrintStore = defineStore('print', {
       for (let i= 0; i < this.papers.length; i++){
         // verificar qual lado do impresso usar na largura da bobina e calcular todos os preços de todos papéis e bobinas
         for (let j= 0; j < this.papers[i].coilWidth.length; j++){
-          let LongerSideMargin = parseInt(this.printLongerSide) + parseInt(this.papers[i].margin)
-          let ShortSideMargin = parseInt(this.printShortSide) + parseInt(this.papers[i].margin)
+          let LongerSideMargin = parseFloat(this.printLongerSide) + parseFloat(this.papers[i].margin)
+          let ShortSideMargin = parseFloat(this.printShortSide) + parseFloat(this.papers[i].margin)
           // Se o lado maior couber na largura da bobina
-          if(LongerSideMargin <= parseInt(this.papers[i].coilWidth[j])) {
-            this.papers[i].printLength[j] = parseInt(this.printShortSide);
-            this.papers[i].printingPrices[j] = ((parseInt(this.papers[i].printLength[j])/100) * (parseInt(this.papers[i].coilWidth[j])/100)) * parseInt(this.papers[i].printingPriceMeter[j]);
+          if(LongerSideMargin <= parseFloat(this.papers[i].coilWidth[j])) {
+            this.papers[i].printLength[j] = parseFloat(ShortSideMargin);
+            this.papers[i].printingPrices[j] = ((parseFloat(this.papers[i].printLength[j])/100) * (parseFloat(this.papers[i].coilWidth[j])/100)) * parseFloat(this.papers[i].printingPriceMeter[j]);
           }
           // Se não couber o lado maior mas couber o lado menor na largura da bobina
           else if (LongerSideMargin > this.papers[i].coilWidth[j] && ShortSideMargin <= this.papers[i].coilWidth[j]){
-            this.papers[i].printLength[j] = parseInt(this.printLongerSide);
-            this.papers[i].printingPrices[j] = ((parseInt(this.papers[i].printLength[j])/100) * (parseInt(this.papers[i].coilWidth[j])/100)) * parseInt(this.papers[i].printingPriceMeter[j]);
+            this.papers[i].printLength[j] = parseFloat(LongerSideMargin);
+            this.papers[i].printingPrices[j] = ((parseFloat(this.papers[i].printLength[j])/100) * (parseFloat(this.papers[i].coilWidth[j])/100)) * parseFloat(this.papers[i].printingPriceMeter[j]);
           }
           else {
             //Se nem o lado menor do impresso couber na largura da bobina preciso passar um "valor muito alto" para o printingPrices. Evitar falha na lógica Math.min de lowestPrice e evitar ser escolhido nela
