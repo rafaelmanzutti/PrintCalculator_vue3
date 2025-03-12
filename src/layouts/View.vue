@@ -7,23 +7,28 @@ import { RouterLink } from 'vue-router';
     { text: 'Calcular impressão', icon: 'mdi mdi-calculator', to: "/CalculationArea"},
   ];
 
+
 </script>
 <template>
-  <v-app id="inspire">
+  <v-app>
     <v-navigation-drawer v-model="drawer">
       <v-img
-        src="https://picsum.photos/1920/1080?random"
-        gradient="to top right, rgba(249,168,0,.7), rgba(255,255,0,1)"
-        height="70"
+        gradient="to top right, rgba(0,0,0,.8), rgba(255,255,255,.5)"
+        height="100"
         cover
         class="pt-0"
       >
-        <v-list>
-          <v-list-item
-            prepend-avatar="https://images.creativefabrica.com/products/previews/2024/09/26/JZ5DtlHao/2mcQioyJmcDUxSIz1IsN13YzPEw-desktop.jpg"
-            title="Studio Frammer"
-            subtitle="Marcus Mesquita"
-          />
+        <v-list class="pt-0">
+          <div class="d-flex align-center justify-space-around">
+            <v-img
+              alt="Marcus"
+              src="@/assets/logo_marcusMesquita_750x750.png"
+            />
+            <v-list-item
+              title="Studio Frammer"
+              class="color-gray"
+            />
+          </div>
         </v-list>
       </v-img>
 
@@ -41,7 +46,7 @@ import { RouterLink } from 'vue-router';
         >
           <v-list-item
             :value="item"
-            color="primary"
+            color="white"
           >
             <template
               #prepend
@@ -57,19 +62,19 @@ import { RouterLink } from 'vue-router';
     </v-navigation-drawer>
 
     <v-app-bar
-      color="teal-darken-4"
-      image="https://picsum.photos/1920/1080?random"
+      color=""
+      image=""
       density="prominent"
-      height="35"
+      height="50"
     >
-      <template v-slot:image>
-        <v-img
-          gradient="to top right, rgba(249,168,0,.5), rgba(255,255,0,.8)"
-        />
-      </template>
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <v-app-bar-nav-icon
+        class="mt-6 color-gray"
+
+        @click="drawer = !drawer"
+      />
       <v-app-bar-title>
         <h2>Studio Frammer</h2>
+        <h6>Calculadora de impressão Fine'art</h6>
       </v-app-bar-title>
     </v-app-bar>
 
@@ -82,8 +87,13 @@ import { RouterLink } from 'vue-router';
 <style scoped>
   a{
     text-decoration: none;
-    color: rgb(165, 148, 0);
+    color: rgb(185, 185, 185);
   }
-
+  h1, h2, h3, h4, h5, h6 {
+    color: rgb(185, 185, 185);
+  }
+  .color-gray{
+    color: rgb(211, 211, 211);
+  }
 
 </style>
