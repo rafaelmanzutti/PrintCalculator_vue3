@@ -16,12 +16,11 @@ import { RouterLink } from 'vue-router';
         gradient="to top right, rgba(0,0,0,.8), rgba(255,255,255,.5)"
         height="100"
         cover
-        class="pt-0"
       >
         <v-list class="pt-0">
-          <div class="d-flex align-center justify-space-around">
+          <div class="d-flex align-center justify-space-around m-0">
             <v-img
-              alt="Marcus"
+              alt="Marcus Mesquita"
               src="@/assets/logo_marcusMesquita_750x750.png"
             />
             <v-list-item
@@ -89,8 +88,13 @@ import { RouterLink } from 'vue-router';
   h1, h2, h3, h4, h5, h6 {
     color: rgb(185, 185, 185);
   }
+  h6 {
+    text-align: center;
+  }
   .color-gray{
     color: rgb(211, 211, 211);
   }
-
+  .v-toolbar__content > .v-toolbar-title {
+    margin-inline-start: 0px;
+  }
 </style>
