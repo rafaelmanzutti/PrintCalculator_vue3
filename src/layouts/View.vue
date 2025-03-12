@@ -62,17 +62,14 @@ import { RouterLink } from 'vue-router';
     </v-navigation-drawer>
 
     <v-app-bar
-      color=""
-      image=""
       density="prominent"
       height="50"
     >
       <v-app-bar-nav-icon
         class="mt-6 color-gray"
-
         @click="drawer = !drawer"
       />
-      <v-app-bar-title>
+      <v-app-bar-title class="d-flex justify-center">
         <h2>Studio Frammer</h2>
         <h6>Calculadora de impressão Fine'art</h6>
       </v-app-bar-title>
