@@ -24,7 +24,7 @@ const printStore = usePrintStore();
         <div>
           <v-btn
             size="small"
-            color="orange-accent-3"
+            color="grey-darken-1"
             variant="elevated"
             @click="printStore.resetSizes()"
           >
@@ -32,7 +32,7 @@ const printStore = usePrintStore();
           </v-btn>
           <v-btn
             v-show="printStore.printLongerSide > 0 && printStore.printShortSide > 0"
-            color="primary-darken-1"
+            color="grey-darken-1"
             variant="elevated"
             class="ml-2"
             @click="printStore.checkSides()"
@@ -47,9 +47,9 @@ const printStore = usePrintStore();
       >
         <v-switch
           v-model="printStore.frame"
+          class="color-gray"
           label="Colocar moldura"
-          color="orange darken-3"
-          value="orange darken-3"
+          color="grey-lighten-5"
           hide-details="mt-0 mb-0 pt-0 pb-0"
         />
       </v-container>
@@ -57,8 +57,8 @@ const printStore = usePrintStore();
   </div>
 </template>
 
-
-
 <style scoped>
-
+  .color-gray{
+    color: rgb(211, 211, 211);
+  }
 </style>

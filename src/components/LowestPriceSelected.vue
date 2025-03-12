@@ -23,7 +23,7 @@ const printStore = usePrintStore();
     </ul>
     <v-btn
       size="small"
-      color="orange-accent-3"
+      color="grey-darken-1"
       variant="elevated"
       class="mt-6"
       @click="printStore.uncheckPaper()"
@@ -38,9 +38,6 @@ const printStore = usePrintStore();
   width: 80%;
   margin: auto;
   margin-top: 20px;
-}
-.title{
-  margin-bottom: 20px;
 }
 .title, h1{
   text-align: center;
