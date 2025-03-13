@@ -61,4 +61,8 @@ const printStore = usePrintStore();
   .color-gray{
     color: rgb(211, 211, 211);
   }
+  .v-input--density-default {
+    --v-input-control-height: 0px;
+  }
+
 </style>

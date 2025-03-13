@@ -8,7 +8,7 @@ const printStore = usePrintStore();
 <template>
   <div class="price-selected">
     <div class="title">
-      <h3>Papel Selecionado no tamanho {{ printStore.printShortSide }} cm x {{ printStore.printLongerSide }} cm </h3>
+      <h4 class="select-title mb-5">Papel Selecionado no tamanho {{ printStore.printShortSide }} cm x {{ printStore.printLongerSide }} cm </h4>
     </div>
     <ul>
       <li>Nome: {{ printStore.paperSelected.name }} </li>
@@ -28,7 +28,7 @@ const printStore = usePrintStore();
       class="mt-6"
       @click="printStore.uncheckPaper()"
     >
-      Desmarcar Papel
+      Desmarcar Seleção
     </v-btn>
   </div>
 </template>
@@ -47,5 +47,8 @@ li{
   border: 1px solid white;
   padding: 4px 4px 4px 8px ;
   margin-left: 2px;
+}
+.select-title{
+  font-weight: 300;
 }
 </style>

@@ -83,5 +83,8 @@ const printStore = usePrintStore();
     height: 80px;
     background-color: rgb(19, 19, 19);
   }
+  caption{
+    margin-bottom: 15px;
+  }
 
 </style>
