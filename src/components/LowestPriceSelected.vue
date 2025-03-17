@@ -31,6 +31,9 @@ const printStore = usePrintStore();
     >
       Desmarcar Seleção
     </v-btn>
+    <div
+      class="bottom-table-space"
+    />
   </div>
 </template>
 
@@ -51,5 +54,9 @@ li{
 }
 .select-title{
   font-weight: 400;
+}
+.bottom-table-space{
+  height: 80px;
+  background-color: rgb(19, 19, 19);
 }
 </style>
