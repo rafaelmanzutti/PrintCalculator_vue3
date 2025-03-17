@@ -56,8 +56,13 @@ export const usePrintStore = defineStore('print', {
       this.printShortSide = ""
       this.notCalculatedPrices = true
     },
+    uncheckPaper(){
+      this.paperSelected = ""
+      this.notPaperSelected = true
+    },
     calculatePrices(){
       this.notCalculatedPrices = false;
+      this.uncheckPaper();
       for (let i= 0; i < this.papers.length; i++){
         // verificar qual lado do impresso usar na largura da bobina e calcular todos os preços de todos papéis e bobinas
         for (let j= 0; j < this.papers[i].coilWidth.length; j++){
@@ -102,10 +107,7 @@ export const usePrintStore = defineStore('print', {
       this.paperSelected = this.papers[indice]
       this.notPaperSelected = false
     },
-    uncheckPaper(){
-      this.paperSelected = ""
-      this.notPaperSelected = true
-    }
+
   }
 })
 
