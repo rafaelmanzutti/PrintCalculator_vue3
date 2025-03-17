@@ -15,6 +15,7 @@ const printStore = usePrintStore();
       <li>Tipo de material: {{ printStore.paperSelected.type }} </li>
       <li>Preço da impressão: {{ printStore.paperSelected.printingLowestPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }} </li>
       <li>Largura da bobina usada: {{ printStore.paperSelected.coilWidthSelected }} cm </li>
+      <li>Comprimento de impressão com margem: {{ printStore.paperSelected.printLengthSelected }} cm </li>
       <li
         v-show="printStore.frame"
       >

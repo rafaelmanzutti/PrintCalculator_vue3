@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 export const usePaperStore = defineStore('paper', {
   state: () => ({
     papers:[
+      // precisa passar um valor de preço no array do "printingPriceMeter" para cada array de "coilWidth". Mesmo que o preço seja o mesmo
       {
         id: 1,
         name:"Canvas Canson",
@@ -14,7 +15,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 2,
@@ -26,7 +28,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 3,
@@ -38,7 +41,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 4,
@@ -50,7 +54,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 5,
@@ -62,7 +67,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 6,
@@ -74,7 +80,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 7,
@@ -86,7 +93,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 8,
@@ -98,7 +106,8 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
       {
         id: 9,
@@ -110,10 +119,9 @@ export const usePaperStore = defineStore('paper', {
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
-        coilWidthSelected: ""
+        coilWidthSelected: "",
+        printLengthSelected: "",
       },
-
-
     ],
   }),
 })

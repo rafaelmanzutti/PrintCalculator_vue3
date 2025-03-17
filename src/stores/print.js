@@ -75,21 +75,24 @@ export const usePrintStore = defineStore('print', {
           }
           else {
             //Se nem o lado menor do impresso couber na largura da bobina preciso passar um "valor muito alto" para o printingPrices. Evitar falha na lógica Math.min de lowestPrice e evitar ser escolhido nela
-            this.papers[i].printingPrices[j] = 1000000000
+            this.papers[i].printingPrices[j] = 1000000000;
+            this.papers[i].printLength[j] = 0;
           }
         }
         // calcular menor preço de cada papel
         let lowestPrice = Math.min(...this.papers[i].printingPrices)
         if (lowestPrice == 1000000000){
           this.papers[i].printingLowestPrice = "-"
+          this.papers[i].printLengthSelected = 0;
         }
         else {
           this.papers[i].printingLowestPrice = lowestPrice
         }
-        // pegar tamanho de bobina responsável pelo menor preço
+        // pegar tamanho de bobina(coilWidthSelected) responsável pelo menor preço; e comprimento da impresão(printLengthSelected)
         for(let k= 0; k < this.papers[i].printingPrices.length; k++){
           if(this.papers[i].printingLowestPrice != "-" && this.papers[i].printingLowestPrice == this.papers[i].printingPrices[k]){
           this.papers[i].coilWidthSelected = this.papers[i].coilWidth[k]
+          this.papers[i].printLengthSelected = this.papers[i].printLength[k]
           }
         }
       }
