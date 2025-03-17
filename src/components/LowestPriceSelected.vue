@@ -49,6 +49,6 @@ li{
   margin-left: 2px;
 }
 .select-title{
-  font-weight: 300;
+  font-weight: 400;
 }
 </style>
