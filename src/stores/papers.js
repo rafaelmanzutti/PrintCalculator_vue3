@@ -46,7 +46,7 @@ export const usePaperStore = defineStore('paper', {
         type: "Algodão",
         margin: 5,
         coilWidth: [111],
-        printingPriceMeter: [700],
+        printingPriceMeter: [650],
         printLength: [],
         printingPrices: [],
         printingLowestPrice: "",
