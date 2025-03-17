@@ -8,7 +8,7 @@ const printStore = usePrintStore();
 <template>
   <div class="price-selected">
     <div class="title">
-      <h4 class="select-title mb-5">Papel Selecionado no tamanho {{ printStore.printShortSide }} cm x {{ printStore.printLongerSide }} cm </h4>
+      <h4 class="select-title mb-5">Material Selecionado no tamanho {{ printStore.printShortSide }} cm x {{ printStore.printLongerSide }} cm </h4>
     </div>
     <ul>
       <li>Nome: {{ printStore.paperSelected.name }} </li>
